@@ -1,23 +1,46 @@
-var num = parseInt(Math.random()*100);
+var num = Math.floor(Math.random() * 20);
+var count = 0;
+let win = false;
+
 
 
 for(;;)
 {
-   let number = Number(prompt("Enter the Number")); 
+    while (count <= 10 ) {
 
-   if(num > number)
-   {
-    alert("Guess Higher");
-   }
-   else if(num == number)
-   {
-    alert("Number is correct");
+    let number = Number(prompt("Enter the Number between 1 10 100"));
+    count++;
+
+    if (num > number) {
+        alert("Too  High");
+    }
+    else if (num == number) {
+        alert("Congratulations! You Win!");
+        alert(count);
+        win = true;
+        break;
+    }
+    else {
+        alert("Too Low");
+    }
+
+}
+
+let play =   prompt(" What You Play Again : yes / no ");
+
+if(play =="yes")
+{
+    console.log(" Start Game");   
+}
+else
+{
+    console.log(" Game is Over");
     break;
-   }
-   else
-   {
-    alert("Guess Lower");
-   }
+    
+}
+}
 
-   
+if(!win)
+{   
+alert(" Game is over");
 }
