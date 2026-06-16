@@ -39,8 +39,20 @@ else
     
 }
 }
+<<<<<<< HEAD
 
 if(!win)
 {   
 alert(" Game is over");
 }
+=======
+
+if(!win)
+{   
+alert(" Game is over");
+}
+
+
+
+
+>>>>>>> aa79f3bcaa584ef77c3ae9fd2821dbc6901126aa
