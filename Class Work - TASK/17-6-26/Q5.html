@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. Write a function to validate a 6-digit OTP.
+
+        (function () {
+            var otp = Math.floor(Math.random() * 100000) + 100000;
+            console.log(otp);
+
+            var isOtp = Number(prompt("Enter the OTP : "));
+
+            if (otp == isOtp) {
+                alert(" OTP is Correct");
+            }
+            else {
+                alert("OTP is Incorrect");
+            }
+
+        })();
+    </script>
+</body>
+
+</html>
