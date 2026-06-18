@@ -1,17 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
 
     <script>
         // 1. Write a recursive function to generate Armstrong Number series up to n terms.
 
+        let n = 153;
+        let orignalNumber = n;
+        let len = String(n);
+        let sum = 0;
+
+
+        while (n > 0) {
+            let mul = 1;
+             var temp = n % 10;
+                n = Math.floor(n / 10);
+
+            for (let i = 0; i < len.length; i++) {  
+                mul *= temp;
+            }
+            sum += mul;
+        }
         
+
+        if(sum === orignalNumber)
+        {
+            console.log("Armstrong");    
+        }
+        else
+        {
+            console.log("Not Armstrong");
+            
+        }
+
     </script>
-    
+
 </body>
+
 </html>
