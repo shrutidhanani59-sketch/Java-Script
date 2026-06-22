@@ -9,21 +9,35 @@
 
 <body>
     <script>
-        <!-- 1. Create a tax calculator with slab logic via functions.  -->
+        // 1. Create a tax calculator with slab logic via functions. 
 
-        let tex = (income) => {
-            var tex = 0;
-
+        let tex = () => {
+    
             let income = Number(prompt("Enter your Income : "));
-
+            let tax = 0;
+        
             if (income <= 250000)
             {
                 tax = 0;
             } 
-            else if(income >= 50)
-    
+            else if(income <= 500000)
+            {
+                tax = (income - 250000)*0.05;
+            }
+            else if(income <= 1000000 )
+            {
+                tax = 12500+  (income - 500000)*0.20;
+            }
+            else
+            {
+                tax = 112500 + (income - 1000000)*0.30;
+            }  
             
+            console.log("Income: " , income);
+            console.log("Tax : " , tax);
+   
         } 
+        tex();
         </script>
 </body>
 

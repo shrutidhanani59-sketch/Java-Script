@@ -1,0 +1,22 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.slider{
+    text-align: center;
+}
+
+img{
+    width: 600px;
+    height: 300px;
+    border-radius: 10px;
+}
+
+button{
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+}
