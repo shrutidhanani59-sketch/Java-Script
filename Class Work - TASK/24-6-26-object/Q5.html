@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Task 5: Movie Booking System
+
+        var movie = {
+            movieName: "Border",
+            ticketPrice: 500,
+            availableSeats: 50,
+            theatreName: "NYCinemas",
+            movieInfo: function () {
+                console.log(` movieName is ${this.movieName} and ticketPrice is ${this.ticketPrice} and availableSeats  is ${this.availableSeats} and theatreName is ${this.theatreName} `);
+
+            }
+        };
+        movie.movieInfo();
+
+
+        // 1. Display movie details.
+
+        console.log(movie);
+
+        // 2. Update the ticket price.
+        movie.ticketPrice = 600;
+        console.log(movie);
+
+        //    3. Add a property `showTime`.
+        movie.showTime =" 9 to 11";
+        console.log(movie);
+
+        // 4. Delete the `theatreName` property.
+        delete movie.theatreName;
+        console.log(movie);
+
+        // 5. Create a method `movieInfo()` that displays complete movie information.
+        movie.movieInfo();
+        
+        
+
+
+
+    </script>
+</body>
+
+</html>
