@@ -12,9 +12,39 @@
 
         var account = {
              accountNumber : 123456,
-             holderName :
-             balance :
-        }
+             holderName : "shruti",
+             balance : 50000,
+             checkBalance : function()
+             {
+                console.log(`accountNumber is ${ this.accountNumber} and holderName  is ${this.holderName} and  balance is ${this.balance}`);
+                
+             }
+        };
+        account.checkBalance();
+
+        // 1. Display account details.
+        console.log(account);
+
+        // 2. Deposit ₹5000 into the balance.
+        account.balance = 55000;
+        console.log(account);
+
+        // 3. Add a property `accountType`
+        account.accountType = "saveingAccount";
+        console.log(account);
+
+        // 4. Delete the `accountType` property.
+
+        delete account.accountType;
+        console.log(account);
+
+        // 5. Create a method `checkBalance()` that displays the current balance.
+
+        account.checkBalance();
+        
+        
+        
+        
     </script>
 </body>
 </html>
