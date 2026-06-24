@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Task 3: Employee Management
+
+        var employee = {
+
+             empId : 456,
+            empName : "Rajal",
+            department : "Marketing",
+            salary : 40000,
+            showDetails : function()
+            {
+                console.log(`empId is ${this.empId} and empName is ${this.empName} and  department is ${this.department} and salary is ${this.salary} `);
+
+            }
+        };
+        employee.showDetails();
+
+        // 1. Display employee details.
+        console.log(employee);
+
+        // 2. Increase salary by 10%.
+        employee.salary = 44000;
+        console.log(employee);
+
+        // 3. Add a property `experience`.
+
+        employee.experience = "Rajkot";
+        console.log(employee);
+
+        // 4. Delete the `department` property.
+        delete employee.department;
+        console.log(employee);
+
+        // 5. Create a method `showDetails()` to display employee information.
+
+        employee.showDetails();
+        
+        
+        
+       
+        
+        
+
+    </script>
+</body>
+
+</html>

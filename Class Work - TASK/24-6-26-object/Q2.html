@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task2</title>
+</head>
+<body>
+    <script>
+        //  Task 2: E-Commerce Product
+
+        var product = {
+            productId : 123,
+            productName : " i-phone",
+            price : 150000,
+            stock : 40,
+            productinfo : function()
+            {
+                console.log(`productId is ${this.productId} and productName is ${this.productName} and  price is ${this.price} and stock is ${this.stock} `);
+                
+            }
+        };
+        product.productinfo();
+        //  Display product details.
+
+        console.log(product);
+
+        // Change the price
+
+        product.price = 160000;
+        console.log(product);
+
+        // Add a property `category`.
+
+        product.category = "pro";
+        console.log(product);
+
+        // Remove the `stock` property.
+         delete product.stock;
+         console.log(product);
+
+        //  Create a method `productInfo()` that displays all product information.
+        product.productinfo();
+        
+         
+        
+
+
+
+        
+        
+    </script>
+</body>
+</html>
