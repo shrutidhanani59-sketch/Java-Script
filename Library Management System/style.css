@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    background-color: aliceblue;  
+}
+
+h1
+{
+    text-align: center;
+    margin-top: 5px;
+    color: #02234f;
+}
+
+.add
+{
+    padding: 10px;
+    border: none;
+    background-color: rgb(49, 49, 244);
+    color: white;
+    border-radius: 5px;
+}
+
+.Display
+{
+    padding: 10px;
+    border: none;
+    background-color: rgb(49, 49, 244);
+    color: white;
+    border-radius: 5px;
+}
+
+.issue
+{
+    padding: 10px;
+    border: none;
+    background-color: rgb(49, 49, 244);
+    color: white;
+    border-radius: 5px;
+}

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,6 +6,321 @@
     <title>Document</title>
 </head>
 <body>
-    <script src="obj.js"></script>
+     <script src="obj.js"></script> -->
+    <!-- <script src="obj2.js"></script> -->
+
+<!-- </body>
+</html>  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+            background:#f4f4f4;
+            padding:30px;
+        }
+
+        .container{
+            max-width:900px;
+            margin:auto;
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,0.2);
+        }
+
+        h1{
+            text-align:center;
+            margin-bottom:20px;
+        }
+
+        .form-group{
+            margin-bottom:15px;
+        }
+
+        input{
+            width:100%;
+            padding:10px;
+            border:1px solid #ccc;
+            border-radius:5px;
+        }
+
+        button{
+            padding:10px 15px;
+            border:none;
+            cursor:pointer;
+            border-radius:5px;
+            margin-right:5px;
+        }
+
+        .add-btn{
+            background:green;
+            color:white;
+        }
+
+        .update-btn{
+            background:orange;
+            color:white;
+        }
+
+        .edit-btn{
+            background:blue;
+            color:white;
+        }
+
+        .delete-btn{
+            background:red;
+            color:white;
+        }
+
+        .search-box{
+            margin:20px 0;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+            margin-top:15px;
+        }
+
+        table, th, td{
+            border:1px solid #ddd;
+        }
+
+        th{
+            background:#333;
+            color:white;
+        }
+
+        th, td{
+            padding:10px;
+            text-align:center;
+        }
+
+        .stats{
+            margin-top:20px;
+            font-size:18px;
+            font-weight:bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Student Management System</h1>
+
+    <div class="form-group">
+        <input type="text" id="name" placeholder="Enter Student Name">
+    </div>
+
+    <div class="form-group">
+        <input type="number" id="marks" placeholder="Enter Marks">
+    </div>
+
+    <button class="add-btn" onclick="addStudent()">Add Student</button>
+    <button class="update-btn" onclick="updateStudent()">Update Student</button>
+
+    <div class="search-box">
+        <input type="text" id="search" placeholder="Search Student..." onkeyup="searchStudent()">
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Marks</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody id="studentTable">
+        </tbody>
+    </table>
+
+    <div class="stats">
+        Total Students:
+        <span id="totalStudents">0</span>
+        <br><br>
+
+        Average Marks:
+        <span id="averageMarks">0</span>
+    </div>
+
+</div>
+
+<script>
+
+let students = JSON.parse(localStorage.getItem("students")) || [];
+
+let editIndex = -1;
+
+displayStudents();
+
+function saveData()
+{
+    localStorage.setItem("students", JSON.stringify(students));
+}
+
+function addStudent()
+{
+    let name = document.getElementById("name").value;
+    let marks = document.getElementById("marks").value;
+
+    if(name === "" || marks === "")
+    {
+        alert("Please Fill All Fields");
+        return;
+    }
+
+    let student = {
+        id: Date.now(),
+        name: name,
+        marks: Number(marks)
+    };
+
+    students.push(student);
+
+    saveData();
+    displayStudents();
+
+    document.getElementById("name").value = "";
+    document.getElementById("marks").value = "";
+}
+
+function displayStudents()
+{
+    let table = document.getElementById("studentTable");
+
+    table.innerHTML = "";
+
+    students.forEach((student,index)=>
+    {
+        table.innerHTML += `
+        <tr>
+            <td>${student.id}</td>
+            <td>${student.name}</td>
+            <td>${student.marks}</td>
+            <td>
+                <button class="edit-btn"
+                onclick="editStudent(${index})">
+                Edit
+                </button>
+
+                <button class="delete-btn"
+                onclick="deleteStudent(${index})">
+                Delete
+                </button>
+            </td>
+        </tr>
+        `;
+    });
+
+    calculateStats();
+}
+
+function editStudent(index)
+{
+    document.getElementById("name").value =
+    students[index].name;
+
+    document.getElementById("marks").value =
+    students[index].marks;
+
+    editIndex = index;
+}
+
+function updateStudent()
+{
+    if(editIndex === -1)
+    {
+        alert("Select Student First");
+        return;
+    }
+
+    students[editIndex].name =
+    document.getElementById("name").value;
+
+    students[editIndex].marks =
+    Number(document.getElementById("marks").value);
+
+    saveData();
+    displayStudents();
+
+    document.getElementById("name").value = "";
+    document.getElementById("marks").value = "";
+
+    editIndex = -1;
+}
+
+function deleteStudent(index)
+{
+    students.splice(index,1);
+
+    saveData();
+    displayStudents();
+}
+
+function searchStudent()
+{
+    let searchValue =
+    document.getElementById("search")
+    .value.toLowerCase();
+
+    let rows =
+    document.querySelectorAll("#studentTable tr");
+
+    rows.forEach(row =>
+    {
+        let name =
+        row.children[1].innerText.toLowerCase();
+
+        if(name.includes(searchValue))
+        {
+            row.style.display = "";
+        }
+        else
+        {
+            row.style.display = "none";
+        }
+    });
+}
+
+function calculateStats()
+{
+    document.getElementById("totalStudents")
+    .innerText = students.length;
+
+    let totalMarks = 0;
+
+    students.forEach(student =>
+    {
+        totalMarks += student.marks;
+    });
+
+    let average =
+    students.length > 0
+    ? (totalMarks / students.length).toFixed(2)
+    : 0;
+
+    document.getElementById("averageMarks")
+    .innerText = average;
+}
+
+</script>
+
 </body>
 </html>
