@@ -16,6 +16,8 @@ document.querySelector('.Display').onclick = function () {
     for (const element of books) {
         document.querySelector('div').innerHTML += `<h2>Book ID : ${element.BookId}</h2>  <h2>Book Name :  ${element.BookName}</h2> <h2> Book Author Name : ${element.AuthorName}</h2> <h2> Book Category : ${element.Category}</h2>  <h2> Book Quantity :${element.Quantity}</h2> `;
     }
+
+  
 }
 
 document.querySelector('.issue').onclick = function () {
@@ -34,6 +36,7 @@ document.querySelector('.issue').onclick = function () {
         }
         break;
     }
+    
 
 }
 
@@ -59,7 +62,7 @@ document.querySelector('.delet').onclick = function ()
    var deletname = prompt("Enter the book name you went to delet");
    
     for (let i = 0; i < books.length; i++) {
-        if (element.BookName === deletname) {
+        if (books[i].BookName === deletname) {
            books.splice(i,1);
             document.querySelector('div').innerHTML += `<h2>Book ID : ${element.BookId}</h2>  <h2>Book Name :  ${element.BookName}</h2> <h2> Book Author Name : ${element.AuthorName}</h2> <h2> Book Category : ${element.Category}</h2>  <h2> Book Quantity :${element.Quantity}</h2> `;
 
@@ -68,14 +71,28 @@ document.querySelector('.delet').onclick = function ()
     }
    
 }
-
-document.querySelector('.total').onclick = function()
+document.querySelector('.status').onclick = function()
 {
-    let count = 0;
-   for (const element of books)
+    var bookstatus = prompt("Enter Book Name");
+    for (const element of books) 
     {
-        count++;        
+        if(element.BookName === bookstatus)
+        {
+           alert("Book is Available");
+            
+        }
+        else
+        {
+            alert("Out of stock");
+        }
+        break;
     }
-        console.log(`Total Book is ${count}`);
 
 }
+
+document.querySelector('.total').onclick = function () {
+
+     alert("Total Books : " + books.length);
+
+}
+
