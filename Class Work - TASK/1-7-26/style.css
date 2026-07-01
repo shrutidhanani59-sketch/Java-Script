@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    background: linear-gradient(135deg, #61A5C2, #468FAF);
+    height: 100vh;
+}
+
+form
+{
+    height: 350px;
+    width: 300px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+}
+input
+{
+    width: 250px;
+}
+button
+{
+    padding: 8px;
+    border: none;
+    border-radius: 15px;
+    margin-left: 80px;
+    margin-top: 10px;
+}
+div
+{
+    margin: 20px;
+    margin-top: 50px;
+}
+.forms
+{
+    display: flex;
+    justify-content: space-around;
+    gap: 100px;
+
+}
+table
+{
+    width: 500px;
+}
