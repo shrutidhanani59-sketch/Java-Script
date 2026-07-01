@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img{
+    height: 99vh;
+    width: 100%;
+}
+.leftBtn{
+    height: 40px;
+    width: 40px;
+    padding: 2px 2px;
+    position: absolute;
+    top: 46%;
+    left: 1%;
+    border: none;
+    font-size: 25px;
+    border-radius: 50%;
+}
+.rightBtn{
+    height: 40px;
+    width: 40px;
+    padding: 2px 2px;
+    position: absolute;
+    top: 46%;
+    left: 96%;
+    border: none;
+    font-size: 25px;
+    border-radius: 50%;
+   
+}
