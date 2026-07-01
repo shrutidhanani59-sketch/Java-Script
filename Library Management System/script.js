@@ -112,5 +112,9 @@ document.querySelector('.status').onclick = function()
 document.querySelector('.total').onclick = function () {
 
      alert("Total Books : " + books.length);
+<<<<<<< HEAD
+=======
 
 }
+>>>>>>> 62ace17060aa52cc324b753fa6c04597f09a5fd6
+
