@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form align="center">
+        <input type="text" name="uname">
+        <br><br>
+        <input type="password" name="pwd">
+        <br><br>
+
+        <br><br>
+        <input type="submit">
+    </form>
+
+    <script>
+        const username = "shruti";
+        const password = "shruti@123";
+
+        document.querySelector('form').onsubmit = function (event) {
+            event.preventDefault();
+
+            if (document.querySelectorAll('input')[0].value==username) {
+                if (document.querySelectorAll('input')[1].value==password) {
+                    alert("Login Successfully");
+                }
+                else
+                {
+                    alert("Worng Password");
+                }
+
+            }
+            else
+            {
+                alert("User name is not difine");
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(localStorage);
+
+        const user = [
+            {
+                fname : "raj",
+                lname : "Shah",
+                gender : "Male"
+            }
+        ];
+        // Add a new json data in a local storage.
+        localStorage.setItem("user", JSON.stringify(user));
+
+        // how to get json data from local storage.
+        console.log(JSON.parse(localStorage.getItem("user")));
+        
+
+
+        
+    </script>
+</body>
+</html>

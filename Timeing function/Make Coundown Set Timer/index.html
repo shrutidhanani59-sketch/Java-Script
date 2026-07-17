@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <span>10</span>
+
+        <div>
+            <button class="start">Start</button>
+            <button class="end">End</button>
+            <button class="reset">Reset</button>
+        </div>
+    </div>
+    <script>
+        let id ;
+        document.querySelector('.start').onclick = function () {
+
+            let index = document.querySelector('span').innerText;
+             id = setInterval(() => {
+                 if (index == 0) {
+                    clearInterval(id);
+                }
+
+                document.querySelector('span').innerText = index--;
+
+            }, 1000)
+        }
+
+        document.querySelector('.end').onclick = function () {
+            clearInterval(id);
+        }
+
+        document.querySelector('.reset').onclick = function() {
+           clearInterval(id);
+           
+            document.querySelector('span').innerText = "10";
+           
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 img{
-    height: 99vh;
+    height: 544px;
     width: 100%;
 }
 .leftBtn{
@@ -13,7 +13,7 @@ img{
     padding: 2px 2px;
     position: absolute;
     top: 46%;
-    left: 1%;
+    left: 0.5%;
     border: none;
     font-size: 25px;
     border-radius: 50%;

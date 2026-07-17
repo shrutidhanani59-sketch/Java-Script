@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body
+        {
+            background-color: aqua;
+            height: 2000px;
+        }
+
+        button
+        {
+             background-color: linen;
+            color: navy;
+            font-family: vrdana;
+            font-size: 24px;
+            padding: 10px 20px;
+            position: absolute;
+            bottom: 20px;
+        }
+        .temp{
+            top: 0px;
+            left: 0px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <button class="">click</button>
+
+    <script>
+        document.body.onscroll = function ()
+        {
+            document.body.style.backgroundColor= "red";
+        }
+        document.querySelector('button').classList.add('temp');
+    </script>
+    
+</body>
+</html>
