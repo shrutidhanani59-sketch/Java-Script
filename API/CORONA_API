@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" placeholder="country" class="button">
+    <h1>country name : </h1>
+    <h2>cases : </h2>
+    <h3>dethes : </h3>
+    
+    <script>
+
+        var corona_API = "https://disease.sh/v3/covid-19/all";
+
+        document.querySelector('.button').onclick = function()
+        {
+            document.querySelector('h1').innerText = " ";
+        document.querySelector('h2').innerText = " ";
+        document.querySelector('h3').innerText = " ";
+
+        var country = document.querySelector('input').value;
+        document.querySelector('h1').append(country);
+        fetch(corona_API).then((response)=>{
+            response.json().then((data)=>{
+                // console.log(data);
+        document.querySelector('h2').append(data.cases);
+        document.querySelector('h3').append(data.deaths);
+
+                
+            });
+        });
+        }
+    </script>
+</body>
+</html>
